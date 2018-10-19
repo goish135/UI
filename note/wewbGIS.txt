@@ -1,0 +1,11 @@
+地圖應用與webGIS
+
+GIS 地理資訊系統 (Geographical Information System)
+webGIS 把GIS應用在"網頁"相關平台上
+
+webGIS 包含
+> The Server has a "URL" so that clients can find it on the web.
+> The client relies on HTTP specifications to send - requests to the server.
+> The server performs the requestsd GIS operations and >
+sends responses to the client via HTTP
+> The format of the response sent to the client can be in many formates,such as HTML,binary image,XML,or JSON  

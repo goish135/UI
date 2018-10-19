@@ -1,0 +1,229 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ6_pgDGOrQjQRSvFcA77D0S0",
+         "types" : [ "establishment", "point_of_interest" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJF56g_mSrQjQRGa1sEPilz6o",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 25.0574304,
+               "lng" : 121.5970904
+            },
+            "southwest" : {
+               "lat" : 25.053431,
+               "lng" : 121.5945031
+            }
+         },
+         "copyrights" : "地圖資料©2018 Google",
+         "legs" : [
+            {
+               "distance" : {
+                  "text" : "0.9 公里",
+                  "value" : 905
+               },
+               "duration" : {
+                  "text" : "5 分",
+                  "value" : 271
+               },
+               "end_address" : "115台灣台北市南港區南港路二段99-19號",
+               "end_location" : {
+                  "lat" : 25.053431,
+                  "lng" : 121.5965024
+               },
+               "start_address" : "115台灣南港區重陽路125巷36弄30號",
+               "start_location" : {
+                  "lat" : 25.0574304,
+                  "lng" : 121.5964764
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "47 公尺",
+                        "value" : 47
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 11
+                     },
+                     "end_location" : {
+                        "lat" : 25.0572966,
+                        "lng" : 121.5960336
+                     },
+                     "html_instructions" : "往\u003cb\u003e西\u003c/b\u003e走\u003cb\u003e重陽路125巷36弄\u003c/b\u003e朝\u003cb\u003e重陽路57巷\u003c/b\u003e前進",
+                     "polyline" : {
+                        "points" : "}_}wC_ideVXxA"
+                     },
+                     "start_location" : {
+                        "lat" : 25.0574304,
+                        "lng" : 121.5964764
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 公里",
+                        "value" : 203
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 52
+                     },
+                     "end_location" : {
+                        "lat" : 25.055519,
+                        "lng" : 121.5964986
+                     },
+                     "html_instructions" : "在第 1 個十字路口向\u003cb\u003e左\u003c/b\u003e轉，走\u003cb\u003e重陽路57巷\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "c_}wCefdeV~Dq@bDk@"
+                     },
+                     "start_location" : {
+                        "lat" : 25.0572966,
+                        "lng" : 121.5960336
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.2 公里",
+                        "value" : 203
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 58
+                     },
+                     "end_location" : {
+                        "lat" : 25.0548638,
+                        "lng" : 121.5946294
+                     },
+                     "html_instructions" : "於\u003cb\u003e重陽路\u003c/b\u003e向\u003cb\u003e右\u003c/b\u003e轉",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "_t|wCcideVn@rBj@nBV|@F`@Fp@"
+                     },
+                     "start_location" : {
+                        "lat" : 25.055519,
+                        "lng" : 121.5964986
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "61 公尺",
+                        "value" : 61
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 48
+                     },
+                     "end_location" : {
+                        "lat" : 25.054424,
+                        "lng" : 121.5946488
+                     },
+                     "html_instructions" : "於\u003cb\u003e向陽路\u003c/b\u003e向\u003cb\u003e左\u003c/b\u003e轉",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "{o|wCm}ceVDXpA]"
+                     },
+                     "start_location" : {
+                        "lat" : 25.0548638,
+                        "lng" : 121.5946294
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0.3 公里",
+                        "value" : 251
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 54
+                     },
+                     "end_location" : {
+                        "lat" : 25.054275,
+                        "lng" : 121.5970904
+                     },
+                     "html_instructions" : "在第 1 個十字路口向\u003cb\u003e左\u003c/b\u003e轉，走\u003cb\u003e南港路二段\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "cm|wCq}ceVF_@QmAEMA]?KB_@J}AJmAF}@Hw@"
+                     },
+                     "start_location" : {
+                        "lat" : 25.054424,
+                        "lng" : 121.5946488
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "56 公尺",
+                        "value" : 56
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 24
+                     },
+                     "end_location" : {
+                        "lat" : 25.053794,
+                        "lng" : 121.5969418
+                     },
+                     "html_instructions" : "向\u003cb\u003e右\u003c/b\u003e轉\u003cdiv style=\"font-size:0.9em\"\u003e限制通行的道路\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "gl|wCyldeV`B\\"
+                     },
+                     "start_location" : {
+                        "lat" : 25.054275,
+                        "lng" : 121.5970904
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "84 公尺",
+                        "value" : 84
+                     },
+                     "duration" : {
+                        "text" : "1 分",
+                        "value" : 24
+                     },
+                     "end_location" : {
+                        "lat" : 25.053431,
+                        "lng" : 121.5965024
+                     },
+                     "html_instructions" : "向\u003cb\u003e右\u003c/b\u003e轉\u003cdiv style=\"font-size:0.9em\"\u003e限制通行的道路\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003e目的地在右邊\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "ei|wC{kdeVER?@?B?@?@@B@BBHXd@JR@??@@?@?@?@?@?BC@ABAHK"
+                     },
+                     "start_location" : {
+                        "lat" : 25.053794,
+                        "lng" : 121.5969418
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "}_}wC_ideVXxA~Dq@bDk@n@rBbAlDNrADXpA]F_@QmAGk@Bk@VkDPuB`B\\ER?DBJj@bAB@HCNO"
+         },
+         "summary" : "南港路二段",
+         "warnings" : [],
+         "waypoint_order" : []
+      }
+   ],
+   "status" : "OK"
+}
