@@ -1,0 +1,17 @@
+畫圖的時候
+我已經把Juction的GPS 取出來了
+可以直接使用
+from code-edition2 import Passed
+使用Passed來畫圖
+
+我給的code-edition2有在最後把Passed print出來
+你看完他呈現的樣子後可以把他mark掉
+
+在我的output line 那個框框的情況
+就只是單純的顯示說
+他走哪條路、花多久時間、總距離多少
+
+
+然後input.py
+我覺得應該不太需要解釋....我旁邊也有註解
+大致上就是這樣
