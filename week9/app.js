@@ -630,9 +630,27 @@ function get_time(time)
 	
 }	
 
+// var ans ;
 function a(start, end) // Call Google Direction API // 
 {
-	$.get("HomeController.php?start="+start+"&end="+end, function (data) {
+	
+	// var ans ;
+	$.getJSON("http://nominatim.openstreetmap.org/search.php?",{"format":"json","zoom":18,"addressdetails":1,"q":start}, function(data) { 
+    	// console.log(JSON.stringify(data));
+		console.log(data[0]['lat'])
+		console.log(data[0]['lon'])
+		p1 = data[0]['lat']+','+data[0]['lon']
+		console.log(p1)
+		//return start
+	// });
+
+	console.log(p1)
+	$.getJSON("http://nominatim.openstreetmap.org/search.php?",{"format":"json","zoom":18,"addressdetails":1,"q":end},function(data2){
+		console.log(data2[0]['lat'])
+		console.log(data2[0]['lon'])
+		p2 = data2[0]['lat']+','+data2[0]['lon']
+		console.log(p2)
+	$.get("HomeController.php?start="+p1+"&end="+p2, function (data) {
 	console.log(data);
 	var jdata = JSON.parse(data);
 	
@@ -644,9 +662,16 @@ function a(start, end) // Call Google Direction API //
 	})
 	*/
 	
+
 	// var latlngs = L.PolylineUtil.decode(jdata.routes[0].overview_polyline.points);
 	var latlngs = L.PolylineUtil.decode(jdata.paths[0].points)
 	var polyline = L.polyline(latlngs);
+	
+	$.each(jdata.paths[0].instructions, function (k, v) {
+	console.log(k)
+    $("#route-list tbody").append("<tr id='" + L.PolylineUtil.encode([latlngs[v.interval[0]],latlngs[v.interval[1]]]) + "' class='route-row'><td>" + v.text + "</td></tr>");
+	})
+	
 	map.removeLayer(global_decorator);
   
 	var decorator = L.polylineDecorator(polyline, {
@@ -664,6 +689,9 @@ function a(start, end) // Call Google Direction API //
 	// map.fitBounds(decorator.getBounds());
 	// console.log(jdata)
 	});	
+	
+	});
+	});
 }
 
 
