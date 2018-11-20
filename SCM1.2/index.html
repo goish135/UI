@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SurpriseCaptainMap</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="dist/assets/css/L.Control.Basemaps.css" />
+    <link rel="stylesheet" href="dist/assets/css/Control.Geocoder.css" />
+    <link rel="stylesheet" href="dist/assets/css/leaflet-measure.css" />
+    <link rel="stylesheet" href="dist/assets/css/leaflet-panel-layers.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css" />
+   <link rel="stylesheet" href="dist/assets/css/leaflet-velocity.min.css" />
+  
+    <link rel="stylesheet" href="dist/assets/css/app.css">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="~/dist/assets/img/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/dist/assets/img/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/dist/assets/img/favicon-152.png">
+    <link rel="icon" sizes="196x196" href="~/dist/assets/img/favicon-196.png">
+    <link rel="icon" type="image/x-icon" href="~/dist/assets/img/favicon.ico">
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+              <div class="navbar-icon-container">
+            <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
+              </div>
+          <a class="navbar-brand" href="#">Surprise Captain Map</a>
+        </div>
+   <div class="navbar-collapse collapse">
+          
+          <ul class="nav navbar-nav">
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;搜尋附近</a></li>
+             <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="route-btn"><i class="fa fa-indent white"></i>&nbsp;&nbsp;導航</a></li>
+           
+            <ul>
+
+    </div>
+      </div>
+    </div>
+
+    <div id="container">
+
+       <div id="sidebar">
+        <div class="sidebar-wrapper">
+          <div class="panel panel-default" id="features">
+            <div class="panel-heading">
+              <h3 class="panel-title">球場清單
+              <button type="button" class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>
+            </div>
+          
+            <div class="sidebar-table">
+              <table class="table table-hover" id="poi-list">
+                <thead class="hidden">
+             
+                </thead>
+                <tbody class="list"></tbody>
+              </table>
+            </div>
+              <div class="panel-body">
+                
+            </div>
+          </div>
+        </div>
+      </div>
+  
+ 
+      <div id="map"></div>
+
+
+   <div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title text-primary" id="feature-title"></h4>
+          </div>
+          <div class="modal-body" id="feature-info"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default"  data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+       <div id="bottom-sidebar">
+        <div class="sidebar-wrapper">
+          <div class="panel panel-default" id="bottom-panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">路徑規劃
+              <button type="button" class="btn btn-xs btn-default pull-right" id="bottom-hide-btn"><i class="fa fa-chevron-down"></i>
+              
+              </button></h3>
+            </div>
+          
+      
+              <div class="panel-body">
+                <div id="googleRouting">
+				<table id="control-panel">
+				<tr>
+				<td><font size="4">Route Planing Input Section</font></td>
+				
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><font size="4">Value Layer Display</font></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><div id="weatherInfo"></div></td>
+				
+				</tr>
+				<tr>
+				<td>起點:<input type="text" id="txtFrom" style="width:200px;"></input></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>時段:<input type=number min=8 max=17 pattern="[8-17]" id="time" title="interval 8-17" value=10/><button id="summit_time" onclick="get_time(time.value)">確認</button></td>
+				
+				
+				</tr>
+				<tr>
+				<td>終點:<input type="text" id="txtEnd" style="width:200px;"></input></td><td><button id="btnSubmit" onclick="a(txtFrom.value,txtEnd.value)">送出</button></td>
+				</tr>
+				</table>
+    
+	
+	
+                  <table class="table table-hover" id="route-list">
+                    <thead class="hidden">
+             
+                    </thead>
+                    <tbody class="list"></tbody>
+                  </table>
+
+
+
+
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="dist/assets/js/L.Control.Basemaps.js"></script>
+<script src="dist/assets/js/turf.min.js"></script>
+<script src="dist/assets/js/Control.Geocoder.js"></script>
+<script src="dist/assets/js/leaflet-measure.js"></script>
+<script src="dist/assets/js/leaflet-panel-layers.js"></script>
+<script src="dist/assets/js/L.Heatmaps.js"></script> 
+<script src="dist/assets/js/leaflet.markercluster-src.js"></script>
+<script src="dist/assets/js/leaflet-velocity.js"></script>
+<script src="./polylineDecorator.js"></script>
+<script src="dist/assets/js/L.encode.js"></script>
+<script src="./app.js"></script>
+<script src="dist/assets/js/Polyline.encoded.js">
+</body>
+</html>
