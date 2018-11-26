@@ -1,0 +1,163 @@
+html, body, #container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body {
+  padding-top: 50px;
+}
+
+#map {
+  width: auto;
+  height: 100%;
+  z-index: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+#sidebar {
+  width: 250px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+}
+#mly{
+    height: 100%;
+    overflow: scroll
+}
+#googleStreet{
+    height: 100%;
+    overflow: scroll
+}
+#googleRouting{
+    height: 100%;
+    overflow: scroll
+}
+#chart{
+  box-shadow: "rgb(0, 0, 0) 0px 0px 17px 2px";
+
+  height: 160px;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+}
+#bottom-sidebar {
+  position: absolute;
+  bottom:0;
+  /* left:250px; */
+  width: 100%;
+  height: 30%;
+  max-width: 100%;
+
+}
+
+.panel-heading{
+   width: 100%;
+}
+
+#bottom-panel{
+height: 100%;
+}
+
+.panel-body{
+  width: 100%;
+  height:100%;
+}
+
+.feature-row {
+  cursor: pointer;
+  width: 250px;
+}
+.sidebar-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.sidebar-table {
+  position: absolute;
+  width: 100%;
+  top: 103px;
+  bottom: 0px;
+  overflow: auto;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+.navbar-collapse.in {
+  overflow-y: hidden;
+}
+.navbar-header .navbar-icon-container {
+  margin-right: 15px;
+}
+.navbar-header .navbar-icon {
+  line-height: 50px;
+  height: 50px;
+}
+.navbar-header a.navbar-icon {
+  margin-left: 25px;
+}
+.white{
+  color:#FFFFFF;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.click {
+  fill: red;
+}
+
+
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+
+@media (max-width: 992px) {
+    #sidebar {
+    display: none;
+  }
+  .navbar .navbar-brand {
+    font-size: 18px;
+  }
+}
+
+/* Print Handling */
+@media print {
+  .navbar {
+    display: none !important;
+  }
+ 
+}
