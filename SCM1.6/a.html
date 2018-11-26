@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="dist/assets/css/L.Control.Basemaps.css" />
+<link rel="stylesheet" href="dist/assets/css/Control.Geocoder.css" />
+<link rel="stylesheet" href="dist/assets/css/leaflet-measure.css" />
+<link rel="stylesheet" href="dist/assets/css/leaflet-panel-layers.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="dist/assets/css/leaflet-velocity.min.css" />
+<script src='https://unpkg.com/mapillary-js@2.10.1/dist/mapillary.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="dist/assets/js/L.Control.Basemaps.js"></script>
+<script src="dist/assets/js/turf.min.js"></script>
+<script src="dist/assets/js/Control.Geocoder.js"></script>
+<script src="dist/assets/js/leaflet-measure.js"></script>
+<script src="dist/assets/js/leaflet-panel-layers.js"></script>
+<script src="dist/assets/js/L.Heatmaps.js"></script> 
+<script src="dist/assets/js/leaflet.markercluster-src.js"></script>
+<script src="dist/assets/js/leaflet-velocity.js"></script>
+<script src="dist/assets/js/leaflet.polylineDecorator.js"></script>
+<script src="dist/assets/js/L.encode.js"></script>
+
+
+<div id='map_div' style="height:100%"></div>
+<script>
+var map = L.map('map_div').setView([25.0375928,121.5529563], 10);
+
+
+var basemap = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+        attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+
+
+$.get("./HomeController.php", function (data) {
+  console.log(data);
+  var jdata = JSON.parse(data);
+
+  $("#route-list tbody").children().remove();
+  $.each(jdata.routes[0].legs[0].steps, function (k, v) {
+
+    $("#route-list tbody").append("<tr id='" + v.polyline.points + "' class='route-row'><td>" + v.html_instructions + "</td></tr>");
+
+  })
+
+
+  var latlngs = L.PolylineUtil.decode(jdata.routes[0].overview_polyline.points);
+  var polyline = L.polyline(latlngs);
+  var decorator = L.polylineDecorator(polyline, {
+    patterns: [
+      { offset: 0, repeat: 10, symbol: L.Symbol.dash({ pixelSize: 3, pathOptions: { color: '#000', weight: 4, opacity: 0.5 } }) },
+      {
+        offset: '5%', repeat: '10%', symbol: L.Symbol.arrowHead({ pixelSize: 16, pathOptions: { fillOpacity: 1, weight: 0 } })
+      }
+    ]
+  }).addTo(map);
+  map.setView([latlngs[0][0] - 0.001, latlngs[0][1]], 17)
+  // map.fitBounds(decorator.getBounds());
+  console.log(jdata)
+});
+
+
+
+
+
+
+
+
+
+
+</script>
