@@ -1,0 +1,352 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+  {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.671514,
+          24.143831
+        ]
+      },
+      "properties": {
+        "cartodb_id": 2,
+        "name": "NTCU 樂群樓3樓桌球場",
+        "description": false,
+        "tel": "(07)8226841轉206\n",
+        "surface": "桌球[table tennis]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "出示學生證、免費",
+        "number_of_courts": 9,
+        "address": "403台中市西區民生路140號",
+        "light": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.670454,
+          24.143790
+        ]
+      },
+      "properties": {
+        "cartodb_id": 90,
+        "name": "中師皇家排球聯盟\n",
+        "description": false,
+        "tel": "05-2243001\n",
+        "surface": "排球[volleyball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 2,
+        "address": "403台中市西區民生路140號",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.670638,
+          24.144108
+        ]
+      },
+      "properties": {
+        "cartodb_id": 99,
+        "name": "NTCU 操場\n",
+        "description": false,
+        "tel": "(08)7368567\n",
+        "surface": "紅土[clay]",
+        "city": "臺中市[Taichung County]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 1,
+        "address": "403台中市西區民生路140號",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.666717,
+          24.144264
+        ]
+      },
+      "properties": {
+        "cartodb_id": 101,
+        "name": "二校網球場\n",
+        "description": false,
+        "tel": "(02)27091630#123\n",
+        "surface": "網球[tennis]",
+        "city": "台中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 2,
+        "address": "403臺中市西區民生路227號",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.662095,
+          24.143181
+        ]
+      },
+      "properties": {
+        "cartodb_id": 109,
+        "name": "向上國中排球場\n",
+        "description": false,
+        "tel": "(04)23726085\n",
+        "surface": "排球[volleyball]",
+        "city": "台中市[Taichung City]",
+        "type": "國中[School]",
+        "charge": "",
+        "number_of_courts": 4,
+        "address": "403臺中市西區美村路一段389號",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.670913,
+          24.143469
+        ]
+      },
+      "properties": {
+        "cartodb_id": 324,
+        "name": "ntcu 游泳池\n",
+        "description": false,
+        "tel": "(07)7033166\n",
+        "surface": "游泳[swim]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 2,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.670476,
+          24.144113
+        ]
+      },
+      "properties": {
+        "cartodb_id": 326,
+        "name": "籃球場",
+        "description": false,
+        "tel": "",
+        "surface": "籃球[basketball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 4,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.603345,
+          24.180242
+        ]
+      },
+      "properties": {
+        "cartodb_id": 349,
+        "name": "東海大學網球場\n",
+        "description": false,
+        "tel": "2493-1111#221\n",
+        "surface": "網球[tennis]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 1,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.701514,
+          24.166130
+        ]
+      },
+      "properties": {
+        "cartodb_id": 373,
+        "name": "東原羽球場\n",
+        "description": false,
+        "tel": "(04)24379758\n",
+        "surface": "羽球[badminton]",
+        "city": "臺中市[Taichung City]",
+        "type": "球場[Playground]",
+        "charge": "",
+        "number_of_courts": 4,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675894,
+          24.118756
+        ]
+      },
+      "properties": {
+        "cartodb_id": 375,
+        "name": "中興大學體育館B1桌球室\n",
+        "description": false,
+        "tel": "(04)92895724\n",
+        "surface": "桌球[table tennis]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 9,
+        "address": "興大路145號",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.674511,
+          24.117886
+        ]
+      },
+      "properties": {
+        "cartodb_id": 397,
+        "name": "中興大學室外排球場\n",
+        "description": false,
+        "tel": "(08)9571124\n",
+        "surface": "排球[volleyball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 3,
+        "address": "402臺中市南區",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675817,
+          24.118419
+        ]
+      },
+      "properties": {
+        "cartodb_id": 421,
+        "name": "中興大學體育館排球場F2\n",
+        "description": false,
+        "tel": "03-5872049#223\n",
+        "surface": "排球[volleyball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 3,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.674560,
+          24.118524
+        ]
+      },
+      "properties": {
+        "cartodb_id": 423,
+        "name": "中興大學籃球場(室外)\n",
+        "description": false,
+        "tel": "(05)2691013-918\n",
+        "surface": "籃球[basketball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 7,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675789,
+          24.118431
+        ]
+      },
+      "properties": {
+        "cartodb_id": 71,
+        "name": "中興大學體育館B1籃球場\n",
+        "description": false,
+        "tel": "",
+        "surface": "籃球[basketball]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "",
+        "number_of_courts": 2,
+        "address": "",
+        "light": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.671743,
+          24.143414
+        ]
+      },
+      "properties": {
+        "cartodb_id": 5,
+        "name": "國立臺中教育大學-中正樓羽球場",
+        "description": false,
+        "tel": "07-3315416\n",
+        "surface": "羽球[badminton]",
+        "city": "臺中市[Taichung City]",
+        "type": "大學[School]",
+        "charge": "免費",
+        "number_of_courts": 6,
+        "address": "403臺中市西區民生路155號",
+        "light": true
+      }
+    }
+  
+  
+  ]
+}
