@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+	<style type="text/css">
+		#map {
+			position:relative;
+			top:50px;
+			height:700px;
+			width:80%;
+		}
+		#info {
+			position:absolute;
+			top:60px;
+			height:700px;
+			right: 50px;
+		}
+		.btn-group .button {
+			background-color: #4CAF50; /* Green */
+			border: 1px solid green;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+			float: left;
+		}
+		.btn-group .button:not(:last-child) {
+			border-right: none; /* Prevent double borders */
+		}
+		.btn-group .button:hover {
+			background-color: #3e8e41;
+		}
+    </style>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+           <div class="navbar-icon-container">
+           <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
+           </div>
+           <a class="navbar-brand" href="#">Surprise Captain Map</a>
+        </div>
+        <div class="navbar-collapse collapse">     
+          <ul class="nav navbar-nav">
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;搜尋附近</a></li>
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="route-btn"><i class="fa fa-indent white"></i>&nbsp;&nbsp;導航</a></li>
+		    <li><a href="index.html">Return</a></li>			
+		  <ul>
+        </div>
+      </div>
+</div>
+<div id="map"></div>
+<div id="info">
+<h2>DIJKSTRA</h2>
+起點:<input type="text" id="txtFrom" style="width:100px;" value="台中二中"></input><br>
+終點:<input type="text" id="txtEnd" style="width:100px;" value="台中教育大學"><br><br>
+<div class="btn-group">
+  <button class="button" onclick="d(txtFrom.value,txtEnd.value)">Car</button>
+  <button class="button" onclick="dd(txtFrom.value,txtEnd.value)">Scooter</button>
+</div>
+<h3>Info:</h3>
+<h4>Time:</h4>
+<div id="times"></div>
+<h4>Distance:</h4>
+<div id="distance"></div>
+<h4>Instruction:</h4>
+<div id="ins"></div>
+</div>  
+</body>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([24.1436581,120.671827],200);
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./dij.js"></script>
+<script type="text/javascript" src="./MovingMarker.js"></script>
+</html>
